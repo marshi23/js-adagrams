@@ -4,7 +4,7 @@ describe('Adagrams', () => {
   describe('drawLetters', () => {
     it('draws ten letters from the letter pool', () => {
       const drawn = Adagrams.drawLetters();
-      
+
       expect(drawn).toHaveLength(10);
     });
 
@@ -19,7 +19,7 @@ describe('Adagrams', () => {
   });
 
   describe('usesAvailableLetters', () => {
-    it.skip('returns true if the submitted letters are valid against the drawn letters', () => {
+    it('returns true if the submitted letters are valid against the drawn letters', () => {
       const drawn = ['D', 'O', 'G', 'X', 'X', 'X', 'X', 'X', 'X', 'X'];
       const word = 'DOG';
 
@@ -27,7 +27,7 @@ describe('Adagrams', () => {
       expect(isValid).toBe(true);
     });
 
-    it.skip('returns false when word contains letters not in the drawn letters', () => {
+    it('returns false when word contains letters not in the drawn letters', () => {
       const drawn = ['D', 'O', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'];
       const word = 'DOG';
 
@@ -35,7 +35,7 @@ describe('Adagrams', () => {
       expect(isValid).toBe(false);
     });
 
-    it.skip('returns false when word contains repeated letters more than in the drawn letters', () => {
+    it('returns false when word contains repeated letters more than in the drawn letters', () => {
       const drawn = ['D', 'O', 'G', 'X', 'X', 'X', 'X', 'X', 'X', 'X'];
       const word = 'GOOD';
 
@@ -45,14 +45,14 @@ describe('Adagrams', () => {
     });
   });
 
-    describe.skip('scoreWord', () => {
+    describe('scoreWord', () => {
     const expectScores = (wordScores) => {
       Object.entries(wordScores).forEach(([word, score]) => {
         expect(Adagrams.scoreWord(word)).toBe(score);
       });
     };
 
-    it.skip('returns an accurate numerical score according to the score chart', () => {
+    it('returns an accurate numerical score according to the score chart', () => {
       expectScores({
         'A': 1,
         'DOG': 5,
@@ -60,7 +60,7 @@ describe('Adagrams', () => {
       });
     });
 
-    it.skip('returns a score regardless of the input case', () => {
+    it('returns a score regardless of the input case', () => {
       expectScores({
         'a': 1,
         'dog': 5,
@@ -68,13 +68,13 @@ describe('Adagrams', () => {
       });
     });
 
-    it.skip('returns a score of 0 if given an empty input', () => {
+    it('returns a score of 0 if given an empty input', () => {
       expectScores({
         '': 0
       });
     });
 
-    it.skip('adds an extra 8 points if word is 7 or more characters long', () => {
+    it('adds an extra 8 points if word is 7 or more characters long', () => {
       expectScores({
         'XXXXXXX': 64,
         'XXXXXXXX': 72,
