@@ -54,7 +54,7 @@ describe('Game Model', () => {
     });
   });
 
-  describe.skip('.currentPlayerName()', () => {
+  describe('.currentPlayerName()', () => {
     it('is defined', () => {
       const model = new Model(config);
 
@@ -253,7 +253,7 @@ describe('Game Model', () => {
     });
   });
 
-  describe.skip('.playWord', () => {
+  describe('.playWord', () => {
     const getModel = () => {
       const model = new Model(config);
       model.nextRound();

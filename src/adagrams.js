@@ -110,12 +110,34 @@ const Adagrams = {
     return score;
   },
 
-// one parameter words - contains array of strings
-// return hash of winning word =  hash = { word : score}
-// tie breaking - shorter word wins. or one with 10 letters
-// else pick the firts word
+
   highestScoreFrom(words) {
 
+    let highestScoringWord = {
+      word: '',
+      score: 0
+    };
+
+    // console.log(words)
+    for (let word of words) {
+      let score = this.scoreWord(word);
+    // console.log(word)
+    // console.log(score)
+      if (score > highestScoringWord.score) {
+        highestScoringWord.score = score;
+        highestScoringWord.word = word;
+      } else if (score == highestScoringWord.score) {
+        if (word.length == 10 && highestScoringWord.word.length != 10) {
+          highestScoringWord.score = score;
+          highestScoringWord.word = word;
+        } else if (word.length < highestScoringWord.word.length && highestScoringWord.word.length != 10) {
+          highestScoringWord.score = score;
+          highestScoringWord.word = word;
+        }
+      }
+    }
+
+    return highestScoringWord;
   },
 };
 
